@@ -4,8 +4,16 @@ import axios from 'axios';
 import './App.css';
 
 import './index.css';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import theme from './components/ColorTheme';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
+  const defaultTheme = theme;
   const [count, setCount] = useState(0);
   const [data, setData] = useState({});
   const uri = 'https://netflix-clone-j0ms.onrender.com/api/movies';
@@ -13,32 +21,26 @@ function App() {
   async function getMovies() {
     try {
       const response = await axios.get(uri);
-      console.log(response);
+      // console.log(response);
       setData(response);
     } catch (error) {
       console.error(error);
     }
   }
 
-useEffect( () => {
-getMovies();
-}),[]; 
-
-
+  useEffect(() => {
+    getMovies();
+  }, []);
 
   return (
-    <>
-      <div className="w-screen h-screen bg-gradient-to-r from-black to-red-500">
-        <h1 className="text-3xl font-bold">NETFLIX</h1>
-        <button className="bg-red-500 shadow-lg text-white font-bold m-5 py-2 px-4 rounded">
-          sign in
-        </button>
-        <button className="bg-red-500 shadow-lg text-white font-bold m-5 py-2 px-4 rounded">
-          search
-        </button>
-        <form action="submit"><input type="text" />search</form>
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <div className="w-screen h-screen bg-red-500">
+        <Header />
+        <Main /> {/* shows routed page components */}
+        <Footer />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 
