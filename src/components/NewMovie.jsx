@@ -35,7 +35,7 @@ const NewMovie = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <h1>Create Movie</h1>
       <br />
       <form onSubmit={handleSubmit}>

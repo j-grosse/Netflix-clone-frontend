@@ -1,11 +1,11 @@
 import React from 'react';
-import SearchAppBar from './SearchAppBar';
+import MenuAppBar from './MenuAppBar';
 
 const Header = () => {
   return (
     <header>
       <nav>
-        <SearchAppBar />
+        <MenuAppBar />
       </nav>
     </header>
   );

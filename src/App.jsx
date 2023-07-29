@@ -35,10 +35,10 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <div className="w-screen h-screen bg-red-500">
+      <div className="bg-black">
         <Header />
         <Main /> {/* shows routed page components */}
-        <Footer />
+        <Footer description="" title="" />
       </div>
     </ThemeProvider>
   );

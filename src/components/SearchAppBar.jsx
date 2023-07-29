@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -8,8 +9,9 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import { Button } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { Button, MenuItem } from '@mui/material';
+import { NavLink, Navigate } from 'react-router-dom';
+import SignIn from './SignIn';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -53,7 +55,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+/////////////////////////////////////////////////////////
+
 export default function SearchAppBar() {
+  const [signInOpen, setSignInOpen] = useState(false);
+
+  const handleClickSignIn = () => {
+    setSignInOpen(true);
+  };
+
+  const handleCloseSignIn = () => {
+    setSignInOpen(false);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -67,6 +81,8 @@ export default function SearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
+          <PositionedMenu />
+
           <Typography
             variant="h6"
             noWrap
@@ -75,16 +91,17 @@ export default function SearchAppBar() {
           >
             <NavLink to="/">WATCHFLIX</NavLink>
           </Typography>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-2 rounded shadow-md">
-            <NavLink to="/">Home</NavLink>
-          </button>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-2 rounded shadow-md">
-            <NavLink to="/movies/new">Add Movie</NavLink>
-          </button>
+          <MenuItem component={NavLink} to="/movies/new">
+            Add Movie
+          </MenuItem>
 
-          {/* <Button className="bg-red-500 shadow-lg text-black font-bold m-5 py-2 px-4 rounded">
-            sign in
-          </Button> */}
+          {/* <MenuItem component={NavLink} to="/signin">Sign In</MenuItem>*/}
+
+          <MenuItem onClick={handleClickSignIn}>Sign in</MenuItem>
+          {signInOpen && <SignIn handleClose={handleCloseSignIn} />}
+          {/* {signInOpen && <Navigate to={`/signin`} />} */}
+          
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

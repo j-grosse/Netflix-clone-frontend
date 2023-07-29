@@ -26,22 +26,35 @@ export default function MovieCard({
           background: theme.palette.background.paper,
           display: 'flex',
           flexDirection: 'column',
-          borderRadius: '10px',
+          borderRadius: '4px',
           boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)',
           bgcolor: 'whitesmoke',
-          ':hover': { bgcolor: 'white' },
+          ':hover': { cursor: 'pointer', transform: 'scale(1.1)', transition: 'background-color 0.5s ease-out', bgcolor: 'lightgrey' },
           height: '100%',
         }}
+        onClick={() =>
+          setSelectedCard({
+            id,
+            title,
+            director,
+            year,
+            rating,
+            poster,
+            genre,
+          })
+        }
       >
         <CardMedia
           component="div"
           sx={{
             // 16:9
-            pt: '56.25%',
+            pt: '140%',
+            // pt: '56.25%',
           }}
           image={poster}
         />
-        <CardContent sx={{ flexGrow: 1 }}>
+        <CardContent sx={{ color: 'white',
+              bgcolor: '#111', flexGrow: 1 }}>
           <Typography gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
@@ -49,12 +62,14 @@ export default function MovieCard({
             by {director}
           </Typography>
         </CardContent>
-        <CardActions>
+        {/* <CardActions sx={{
+              color: 'red',
+              bgcolor: '#111'}}>
           <Button
             sx={{
-              color: 'primary.main',
-              bgcolor: 'whitesmoke',
-              ':hover': { bgcolor: 'white' },
+              color: 'white',
+              bgcolor: '#111',
+              ':hover': { bgcolor: 'grey' },
             }}
             size="small"
             onClick={() =>
@@ -69,13 +84,9 @@ export default function MovieCard({
               })
             }
           >
-            View Details
+            Details
           </Button>
-
-          {/* loggedIn && 
-          Link href="https://contentful.com/login"
-          <Button size="small">Edit</Button> */}
-        </CardActions>
+        </CardActions> */}
       </Card>
     </div>
   );

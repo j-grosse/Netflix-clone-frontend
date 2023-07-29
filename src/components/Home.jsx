@@ -4,6 +4,10 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import RenderCards from './RenderCards';
+import UseFormControl from './UseFormControl';
+import Container from '@mui/material/Container';
+import { Typography } from '@mui/material';
+import Hero from './Hero';
 
 const Home = () => {
   // backend routes here, e.g. /api/movies/1
@@ -20,29 +24,16 @@ const Home = () => {
 
   return !selectedCard ? (
     // frontend routes here, e.g. /movies/1
-    <div className="container" style={{ textAlign: 'center' }}>
-      <button className="bg-red-500 shadow-lg text-white font-bold m-5 py-2 px-4 rounded">
-        sign in
-      </button>
-
-      <form action="submit">
-        <input type="text" />
-        <button className="bg-red-500 shadow-lg text-white font-bold m-5 py-2 px-4 rounded">
-          search
-        </button>{' '}
-      </form>
-      {/* <ul>
-        {movies &&
-          movies.map((movie) => (
-            <li className="card w-10" key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>
-                {movie.title} by {movie.director}
-              </Link>
-            </li>
-          ))}
-      </ul> */}
+    <>
+      {/* <Container
+      component="main"
+      maxWidth="xl"
+      sx={{ textAlign: 'center', padding: '2rem' }}
+    > */}
+      <Hero />
       <RenderCards apiData={movies} setSelectedCard={setSelectedCard} />
-    </div>
+      {/* </Container> */}
+    </>
   ) : (
     <Navigate to={`/movies/${selectedCard.id}`} />
   );

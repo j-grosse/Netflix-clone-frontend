@@ -10,6 +10,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles'; // Theme hook
+import { ButtonGroup } from '@mui/material';
+import UpdateMovie from './UpdateMovie';
 
 const MovieDetails = () => {
   const theme = useTheme();
@@ -18,12 +20,14 @@ const MovieDetails = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [movie, setMovie] = useState(null); // movies array from backend
+  const [showUpdate, setShowUpdate] = useState(null);
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies/${id}`)
       .then((res) => setMovie(res.data))
       .catch((e) => console.log(e.response?.data?.message));
+    console.log('API data was fetched');
   }, []);
 
   const handleDelete = () => {
@@ -35,22 +39,26 @@ const MovieDetails = () => {
 
   return (
     <>
-      <div className="container" style={{ textAlign: 'center' }}>
-        <Card
-          sx={{
-            background: theme.palette.background.paper,
-            display: 'flex',
-            flexDirection: 'column',
-            borderRadius: '10px',
-            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)',
-            bgcolor: 'whitesmoke',
-            ':hover': { bgcolor: 'white' },
-            height: '100%',
-          }}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+
+      {movie && (
+        <div
+          className="container m-5"
+          style={{ display: 'flex', justifyContent: 'center' }}
         >
-          {error && <p style={{ color: 'red' }}>{error}</p>}
-          {movie && (
-            <>
+          <Card
+            sx={{
+              background: theme.palette.background.paper,
+              display: 'flex',
+              flexDirection: 'column',
+              borderRadius: '10px',
+              boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)',
+              bgcolor: 'whitesmoke',
+              ':hover': { bgcolor: 'white' },
+              height: '100%',
+            }}
+          >
+            <CardContent sx={{ flexGrow: 1 }}>
               <Typography
                 variant="h4"
                 noWrap
@@ -59,32 +67,56 @@ const MovieDetails = () => {
               >
                 {movie.title}
               </Typography>
+
               <CardMedia
                 component="div"
                 sx={{
                   // 16:9
-                  pt: '56.25%',
+                  //   pt: '56.25%',
+                  pt: '140%',
                 }}
                 image={movie.poster}
               />
+
               <p>Director: {movie.director}</p>
               <p>Year: {movie.year}</p>
               <p>Rating: {movie.rating}</p>
-
               <p>Genre: {movie.genre}</p>
-              <button className="bg-red-500 shadow-lg text-white font-bold m-5 py-2 px-4 rounded">
-                <Link to={`/movies/${id}/update`}>Update Movie</Link>
-              </button>
-              <button
-                className="bg-red-500 shadow-lg text-white font-bold m-5 py-2 px-4 rounded"
-                onClick={handleDelete}
+            </CardContent>
+
+            <CardActions>
+              <ButtonGroup
+                variant="contained"
+                aria-label="outlined primary button group"
               >
-                Delete Movie
-              </button>
-            </>
-          )}
-        </Card>
-      </div>
+                <Button
+                  sx={{
+                    color: 'primary.main',
+                    bgcolor: 'whitesmoke',
+                  }}
+                  size="large"
+                  onClick={() => setShowUpdate(true)}
+                >
+                  Update Movie
+                  {/* <Link to={`/movies/${id}/update`}>Update Movie</Link> */}
+                </Button>
+                <Button
+                  sx={{
+                    color: 'primary.main',
+                    bgcolor: 'whitesmoke',
+                    ':hover': { bgcolor: 'grey' },
+                  }}
+                  size="large"
+                  onClick={handleDelete}
+                >
+                  Delete Movie
+                </Button>
+              </ButtonGroup>
+            </CardActions>
+          </Card>
+          {showUpdate && <UpdateMovie />}
+        </div>
+      )}
     </>
   );
 };
