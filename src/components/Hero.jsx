@@ -13,7 +13,6 @@ import UseFormControl from './SearchForm';
 const Hero = ({ children }) => {
   return (
     <div>
-      <Container maxWidth={false}>
         <Box
           sx={{
             bgcolor: 'background.black',
@@ -21,28 +20,20 @@ const Hero = ({ children }) => {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             pt: 0,
-            pb: 40,
+            pb: 50,
+            textAlign: 'center',
           }}
         >
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Typography variant="h1" align="center" color="red" paragraph>
-            WATCHFLIX
-          </Typography>
 
           <Stack
-            sx={{ pt: 4, mb: 5 }}
-            direction="row"
-            spacing={2}
+            sx={{ pt: 40 }}
+            direction="column"
+            spacing={6}
             justifyContent="center"
           >
+                      <Typography variant="h3" sx={{ textAlign: 'center' }} color="red">
+            WATCHFLIX
+          </Typography>
             {children}
             {/* <UseFormControl /> */}
 
@@ -56,7 +47,6 @@ const Hero = ({ children }) => {
             {/* <Button variant="outlined">Secondary action</Button> */}
           </Stack>
         </Box>
-      </Container>
     </div>
   );
 };

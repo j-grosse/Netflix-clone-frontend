@@ -37,7 +37,11 @@ function App() {
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
 
-      <Container maxWidth={false} style={{padding: 0, height: '100%'}} className="bg-black">
+      <Container
+        maxWidth={false}
+        style={{ margin: 0, padding: 0, height: '100%' }}
+        className="bg-black"
+      >
         <Header />
         <Main /> {/* shows routed page components */}
         <Footer description="" title="" />

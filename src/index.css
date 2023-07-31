@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  background: black;
+}
+
 li a {
   text-decoration: none;
 }

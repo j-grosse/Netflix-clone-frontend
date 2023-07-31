@@ -15,7 +15,7 @@ import Menu from '@mui/material/Menu';
 import SignIn from './SignIn';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import favicon from '/favicon.png';
+import favicon from '/favicon.png'; // to show on netlify you cannot use '/public/favicon.png'
 
 export default function MenuAppBar() {
   const navigate = useNavigate();
