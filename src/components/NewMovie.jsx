@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import defaultPoster from '/src/assets/defaultPoster.jpg';
+import defaultPoster from '../assets/defaultPoster.jpg';
 import { useTheme } from '@mui/material/styles'; // Theme hook
 
 const NewMovie = () => {
@@ -24,7 +24,7 @@ const NewMovie = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // let defaultImage = "https://m.media-amazon.com/images/M/MV5BMTgzNjYxOTQzMl5BMl5BanBnXkFtZTgwOTQyMDEwMDE@._V1_UX182_CR0,0,182,268_AL_.jpg"
+    // let defaultImage = "https://m.media-amazon.com/images/AL_.jpg"
     // {image: image || defaultImage}
 
     axios
