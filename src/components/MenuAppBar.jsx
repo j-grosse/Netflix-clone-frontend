@@ -15,6 +15,7 @@ import Menu from '@mui/material/Menu';
 import SignIn from './SignIn';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import favicon from '/favicon.png';
 
 export default function MenuAppBar() {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ export default function MenuAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <img src="/public/favicon.png" width="40"/>
+          <img src={favicon} width="40" />
           {/* <IconButton
             size="large"
             aria-label="menu"
@@ -81,7 +82,11 @@ export default function MenuAppBar() {
             <MenuItem onClick={handleClose}>My account</MenuItem>
           </Menu> */}
 
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1, ml: '12px'}}>
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{ flexGrow: 1, ml: '12px' }}
+          >
             <NavLink to="/">WATCHFLIX</NavLink>
           </Typography>
           {auth && (
