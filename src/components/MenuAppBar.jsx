@@ -27,14 +27,14 @@ export default function MenuAppBar() {
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
+    handleClickSignIn(); // open Sign In Form
   };
 
   const handleClose = () => {
     setAnchorEl(null);
   };
 
-  ////////////////////////////////////////////////////////////////
-
+  // Sign In
   const [signInOpen, setSignInOpen] = React.useState(false);
 
   const handleClickSignIn = () => {
@@ -51,6 +51,7 @@ export default function MenuAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
+          <img src="/public/favicon.png" width="40"/>
           {/* <IconButton
             size="large"
             aria-label="menu"
@@ -80,7 +81,7 @@ export default function MenuAppBar() {
             <MenuItem onClick={handleClose}>My account</MenuItem>
           </Menu> */}
 
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1, ml: '12px'}}>
             <NavLink to="/">WATCHFLIX</NavLink>
           </Typography>
           {auth && (
@@ -94,7 +95,7 @@ export default function MenuAppBar() {
                 color="inherit"
               >
                 {/* <AccountCircle /> */}
-                <AccountCircle onClick={handleClickSignIn} />
+                <AccountCircle />
               </IconButton>
               <Menu
                 id="menu-appbar"

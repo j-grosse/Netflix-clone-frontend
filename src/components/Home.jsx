@@ -4,9 +4,9 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import RenderCards from './RenderCards';
-import UseFormControl from './UseFormControl';
+import SearchForm from './SearchForm';
 import Container from '@mui/material/Container';
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import Hero from './Hero';
 import SwiperCarousel from './SwiperCarousel';
 
@@ -25,12 +25,22 @@ const Home = () => {
 
   return !selectedCard ? (
     // frontend routes here, e.g. /movies/1
-    <>
-      <Hero />
-      <RenderCards apiData={movies} setSelectedCard={setSelectedCard} />
-      <SwiperCarousel movies={movies} setSelectedCard={setSelectedCard} />
-      {/* </Container> */}
-    </>
+    <Box sx={{ minHeight: '100vh' }}>
+      <Hero>
+        <SearchForm setMovies={setMovies} />
+      </Hero>
+      {/* <RenderCards apiData={movies} setSelectedCard={setSelectedCard} /> */}
+      {Array.isArray(movies) ? (
+        <SwiperCarousel movies={movies} setSelectedCard={setSelectedCard} />
+      ) : (
+        <Typography
+          variant="h2"
+          sx={{ color: 'red', mt: '5rem', textAlign: 'center' }}
+        >
+          no movies found
+        </Typography>
+      )}
+    </Box>
   ) : (
     <Navigate to={`/movies/${selectedCard.id}`} />
   );

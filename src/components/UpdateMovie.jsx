@@ -58,47 +58,52 @@ const UpdateMovie = () => {
 
   return (
     <div>
-            <Box sx={{ marginLeft: '3rem' }}>
+      <Box sx={{ marginLeft: '3rem' }}>
         <form
           onSubmit={handleSubmit}
-          style={{ display: 'flex', flexDirection: 'column', width: '25rem' }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '25rem',
+            color: 'black',
+          }}
         >
-          <label htmlFor="title">Title</label>
+          <label style={{ color: 'white' }} htmlFor="title">Title</label>
           <input
             type="text"
             name="title"
             value={movie?.title || ''}
             onChange={handleChange}
           />
-          <label htmlFor="director">Director</label>
+          <label style={{ color: 'white' }} htmlFor="director">Director</label>
           <input
             type="text"
             name="director"
             value={movie?.director || ''}
             onChange={handleChange}
           />
-          <label htmlFor="year">Year</label>
+          <label style={{ color: 'white' }} htmlFor="year">Year</label>
           <input
             type="text"
             name="year"
             value={movie?.year || ''}
             onChange={handleChange}
           />
-          <label htmlFor="rating">Rating</label>
+          <label style={{ color: 'white' }} htmlFor="rating">Rating</label>
           <input
             type="text"
             name="rating"
             value={movie?.rating || ''}
             onChange={handleChange}
           />
-          <label htmlFor="poster">Poster</label>
+          <label style={{ color: 'white' }} htmlFor="poster">Poster</label>
           <input
             type="text"
             name="poster"
             value={movie?.poster || ''}
             onChange={handleChange}
           />
-          <label htmlFor="genre">Genre</label>
+          <label style={{ color: 'white' }} htmlFor="genre">Genre</label>
           <input
             type="text"
             name="genre"

@@ -7,32 +7,32 @@ import Button from '@mui/material/Button';
 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import heroImage from '/src/assets/bg.jpg';
-import UseFormControl from './UseFormControl';
+import heroImage from '../assets/bg.jpg';
+import UseFormControl from './SearchForm';
 
-const Hero = () => {
+const Hero = ({ children }) => {
   return (
     <div>
-      <Box
-        sx={{
-          bgcolor: 'background.black',
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${heroImage})`,
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          pt: 0,
-          pb: 40,
-        }}
-      >
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <Container maxWidth="xl">
+      <Container maxWidth={false}>
+        <Box
+          sx={{
+            bgcolor: 'background.black',
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${heroImage})`,
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            pt: 0,
+            pb: 40,
+          }}
+        >
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <Typography variant="h1" align="center" color="red" paragraph>
             WATCHFLIX
           </Typography>
@@ -43,8 +43,8 @@ const Hero = () => {
             spacing={2}
             justifyContent="center"
           >
-            <UseFormControl />
-            {/* SELECT * from movies WHERE title OR director OR year OR genre LIKE '*' LIMIT 10; */}
+            {children}
+            {/* <UseFormControl /> */}
 
             {/* 
                 <Button
@@ -55,8 +55,8 @@ const Hero = () => {
                 </Button> */}
             {/* <Button variant="outlined">Secondary action</Button> */}
           </Stack>
-        </Container>
-      </Box>
+        </Box>
+      </Container>
     </div>
   );
 };

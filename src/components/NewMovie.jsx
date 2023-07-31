@@ -77,9 +77,13 @@ const NewMovie = () => {
                   variant="h5"
                   noWrap
                   component="div"
-                  sx={{ width: '25rem', flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                  sx={{
+                    width: '25rem',
+                    flexGrow: 1,
+                    display: { xs: 'none', sm: 'block' },
+                  }}
                 >
-                  Add Movie
+                  New Movie
                 </Typography>
 
                 <CardMedia
@@ -95,61 +99,60 @@ const NewMovie = () => {
             </Card>
 
             <Box sx={{ marginLeft: '3rem' }}>
-
-            <form
-              onSubmit={handleSubmit}
-              style={{
-                color: 'white',
-                display: 'flex',
-                flexDirection: 'column',
-                width: '25rem',
-                margin: '0 auto',
-              }}
-            >
-              <label htmlFor="title">Title</label>
-              <input
-                type="text"
-                name="title"
-                onChange={(e) => setTitle(e.target.value)}
-              />
-              <label htmlFor="director">Director</label>
-              <input
-                type="text"
-                name="director"
-                onChange={(e) => setDirector(e.target.value)}
-              />
-              <label htmlFor="year">Year</label>
-              <input
-                type="text"
-                name="year"
-                onChange={(e) => setYear(e.target.value)}
-              />
-              <label htmlFor="rating">Rating</label>
-              <input
-                type="text"
-                name="rating"
-                onChange={(e) => setRating(e.target.value)}
-              />
-              <label htmlFor="poster">Poster</label>
-              <input
-                type="text"
-                name="poster"
-                onChange={(e) => setPoster(e.target.value)}
-              />
-              <label htmlFor="genre">Genre</label>
-              <input
-                type="text"
-                name="genre"
-                onChange={(e) => setGenre(e.target.value)}
-              />
-              <br />
-              <Button variant="outlined" onClick={handleSubmit}>
-                Add Movie
-              </Button>
-              <Button variant="outlined" onClick={() => navigate('/')}>
-                Cancel
-              </Button>
-            </form>
+              <form
+                onSubmit={handleSubmit}
+                style={{
+                  color: 'black',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '25rem',
+                  margin: '0 auto',
+                }}
+              >
+                <label style={{ color: 'white' }} htmlFor="title">Title</label>
+                <input
+                  type="text"
+                  name="title"
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+                <label style={{ color: 'white' }} htmlFor="director">Director</label>
+                <input
+                  type="text"
+                  name="director"
+                  onChange={(e) => setDirector(e.target.value)}
+                />
+                <label style={{ color: 'white' }} htmlFor="year">Year</label>
+                <input
+                  type="text"
+                  name="year"
+                  onChange={(e) => setYear(e.target.value)}
+                />
+                <label style={{ color: 'white' }} htmlFor="rating">Rating</label>
+                <input
+                  type="text"
+                  name="rating"
+                  onChange={(e) => setRating(e.target.value)}
+                />
+                <label style={{ color: 'white' }} htmlFor="poster">Poster</label>
+                <input
+                  type="text"
+                  name="poster"
+                  onChange={(e) => setPoster(e.target.value)}
+                />
+                <label style={{ color: 'white' }} htmlFor="genre">Genre</label>
+                <input
+                  type="text"
+                  name="genre"
+                  onChange={(e) => setGenre(e.target.value)}
+                />
+                <br />
+                <Button variant="outlined" onClick={handleSubmit}>
+                  Add Movie
+                </Button>
+                <Button variant="outlined" onClick={() => navigate('/')}>
+                  Cancel
+                </Button>
+              </form>
             </Box>
           </div>
         </Box>
