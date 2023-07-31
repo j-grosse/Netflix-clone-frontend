@@ -2,10 +2,15 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import React from 'react';
 import MovieCard from './MovieCard';
+import Typography from '@mui/material/Typography';
 
 const RenderCards = ({ apiData, setSelectedCard }) => {
   return (
-    <Container sx={{ py: 8 }} maxWidth="xl">
+    <Container sx={{ py: 8, color: 'white' }} maxWidth="xl">
+
+
+      
+      <Typography variant="h4" sx={{mb: '2rem'}}>Most Popular</Typography>
       <Grid container spacing={2}>
         {apiData &&
           apiData.map((entry, index) => (

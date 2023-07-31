@@ -32,7 +32,7 @@ const Hero = () => {
         <br />
         <br />
         <br />
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           <Typography variant="h1" align="center" color="red" paragraph>
             WATCHFLIX
           </Typography>

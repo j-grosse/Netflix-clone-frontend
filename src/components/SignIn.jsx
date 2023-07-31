@@ -43,7 +43,7 @@ export default function SignIn({ handleClose }) {
   };
 
   return (
-    <Container component="main" maxWidth="xl">
+    <Container component="main" maxWidth="sm">
       <CssBaseline />
       <Box
         sx={{
@@ -95,9 +95,9 @@ export default function SignIn({ handleClose }) {
           <Button
             type="submit"
             fullWidth
-            variant="contained"
+            variant="outlined"
             onClick={handleClose}
-            sx={{ mt: 3, mb: 2 }}
+            sx={{ mt: 1, mb: 2, ':hover':{bgcolor: 'lightgrey'},}}
           >
             Cancel
           </Button>

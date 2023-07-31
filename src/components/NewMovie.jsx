@@ -3,8 +3,17 @@ import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Container from '@mui/material/Container';
+import { Box, Button, Card } from '@mui/material';
+import Typography from '@mui/material/Typography';
+
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import defaultPoster from '/src/assets/defaultPoster.jpg';
+import { useTheme } from '@mui/material/styles'; // Theme hook
 
 const NewMovie = () => {
+  const theme = useTheme();
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [director, setDirector] = useState('');
@@ -35,49 +44,117 @@ const NewMovie = () => {
   };
 
   return (
-    <div>
-      <h1>Create Movie</h1>
-      <br />
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          name="title"
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <label htmlFor="director">Director</label>
-        <input
-          type="text"
-          name="director"
-          onChange={(e) => setDirector(e.target.value)}
-        />
-        <label htmlFor="year">Year</label>
-        <input
-          type="text"
-          name="year"
-          onChange={(e) => setYear(e.target.value)}
-        />
-        <label htmlFor="rating">Rating</label>
-        <input
-          type="text"
-          name="rating"
-          onChange={(e) => setRating(e.target.value)}
-        />
-        <label htmlFor="poster">Poster</label>
-        <input
-          type="text"
-          name="poster"
-          onChange={(e) => setPoster(e.target.value)}
-        />
-        <label htmlFor="genre">Genre</label>
-        <input
-          type="text"
-          name="genre"
-          onChange={(e) => setGenre(e.target.value)}
-        />
-        <button> Add Movie </button>
-      </form>
-    </div>
+    <>
+      <Container component="main" maxWidth="xl">
+        <Box
+          sx={{
+            margin: '2rem',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '100vh',
+            color: 'white',
+          }}
+        >
+          <div
+            className="container m-5"
+            style={{ display: 'flex', justifyContent: 'center' }}
+          >
+            {/* <h1>Create Movie</h1>*/}
+            <Card
+              sx={{
+                background: theme.palette.background.paper,
+                display: 'flex',
+                flexDirection: 'column',
+                borderRadius: '4px',
+                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)',
+                bgcolor: 'whitesmoke',
+                ':hover': { bgcolor: 'white' },
+                height: '100%',
+              }}
+            >
+              <CardContent sx={{ flexGrow: 1 }}>
+                <Typography
+                  variant="h5"
+                  noWrap
+                  component="div"
+                  sx={{ width: '25rem', flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                >
+                  Add Movie
+                </Typography>
+
+                <CardMedia
+                  component="div"
+                  sx={{
+                    // 16:9
+                    //   pt: '56.25%',
+                    pt: '140%',
+                  }}
+                  image={defaultPoster}
+                />
+              </CardContent>
+            </Card>
+
+            <Box sx={{ marginLeft: '3rem' }}>
+
+            <form
+              onSubmit={handleSubmit}
+              style={{
+                color: 'white',
+                display: 'flex',
+                flexDirection: 'column',
+                width: '25rem',
+                margin: '0 auto',
+              }}
+            >
+              <label htmlFor="title">Title</label>
+              <input
+                type="text"
+                name="title"
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <label htmlFor="director">Director</label>
+              <input
+                type="text"
+                name="director"
+                onChange={(e) => setDirector(e.target.value)}
+              />
+              <label htmlFor="year">Year</label>
+              <input
+                type="text"
+                name="year"
+                onChange={(e) => setYear(e.target.value)}
+              />
+              <label htmlFor="rating">Rating</label>
+              <input
+                type="text"
+                name="rating"
+                onChange={(e) => setRating(e.target.value)}
+              />
+              <label htmlFor="poster">Poster</label>
+              <input
+                type="text"
+                name="poster"
+                onChange={(e) => setPoster(e.target.value)}
+              />
+              <label htmlFor="genre">Genre</label>
+              <input
+                type="text"
+                name="genre"
+                onChange={(e) => setGenre(e.target.value)}
+              />
+              <br />
+              <Button variant="outlined" onClick={handleSubmit}>
+                Add Movie
+              </Button>
+              <Button variant="outlined" onClick={() => navigate('/')}>
+                Cancel
+              </Button>
+            </form>
+            </Box>
+          </div>
+        </Box>
+      </Container>
+    </>
   );
 };
 

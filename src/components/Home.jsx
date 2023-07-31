@@ -8,6 +8,7 @@ import UseFormControl from './UseFormControl';
 import Container from '@mui/material/Container';
 import { Typography } from '@mui/material';
 import Hero from './Hero';
+import SwiperCarousel from './SwiperCarousel';
 
 const Home = () => {
   // backend routes here, e.g. /api/movies/1
@@ -25,13 +26,9 @@ const Home = () => {
   return !selectedCard ? (
     // frontend routes here, e.g. /movies/1
     <>
-      {/* <Container
-      component="main"
-      maxWidth="xl"
-      sx={{ textAlign: 'center', padding: '2rem' }}
-    > */}
       <Hero />
       <RenderCards apiData={movies} setSelectedCard={setSelectedCard} />
+      <SwiperCarousel movies={movies} setSelectedCard={setSelectedCard} />
       {/* </Container> */}
     </>
   ) : (

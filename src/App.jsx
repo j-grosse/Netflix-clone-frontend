@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import theme from './components/ColorTheme';
 import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
 
 function App() {
   const defaultTheme = theme;
@@ -35,11 +36,12 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <div className="bg-black">
+
+      <Container maxWidth={false} style={{padding: 0, height: '100%'}} className="bg-black">
         <Header />
         <Main /> {/* shows routed page components */}
         <Footer description="" title="" />
-      </div>
+      </Container>
     </ThemeProvider>
   );
 }

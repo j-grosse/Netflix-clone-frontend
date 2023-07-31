@@ -58,9 +58,7 @@ const UpdateMovie = () => {
 
   return (
     <div>
-      <Box sx={{ margin: '2rem'}}>
-        <h1>Update Movie</h1>
-        <br />
+            <Box sx={{ marginLeft: '3rem' }}>
         <form
           onSubmit={handleSubmit}
           style={{ display: 'flex', flexDirection: 'column', width: '25rem' }}
@@ -107,8 +105,15 @@ const UpdateMovie = () => {
             value={movie?.genre || ''}
             onChange={handleChange}
           />
-          <Button onClick={handleSubmit}> Update Movie </Button>
-          <Button onClick={() => navigate('/')}> Cancel </Button>
+          <br />
+          <Button variant="outlined" onClick={handleSubmit}>
+            {' '}
+            Update Movie{' '}
+          </Button>
+          <Button variant="outlined" onClick={() => navigate('/')}>
+            {' '}
+            Cancel{' '}
+          </Button>
         </form>
       </Box>
     </div>

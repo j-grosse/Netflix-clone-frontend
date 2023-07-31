@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Container from '@mui/material/Container';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,8 +14,10 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import SignIn from './SignIn';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function MenuAppBar() {
+  const navigate = useNavigate();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -90,7 +93,8 @@ export default function MenuAppBar() {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle />
+                {/* <AccountCircle /> */}
+                <AccountCircle onClick={handleClickSignIn} />
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -107,12 +111,13 @@ export default function MenuAppBar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
+                {/* <MenuItem onClick={handleClickSignIn}>Sign in</MenuItem> */}
+                {signInOpen && <SignIn handleClose={handleCloseSignIn} />}
+                {!signInOpen && ''}
+                {/* {signInOpen && <Navigate to={`/signin`} />} */}
+
                 {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem> */}
-                <MenuItem onClick={handleClickSignIn}>Sign in</MenuItem>
-                {signInOpen && <SignIn handleClose={handleCloseSignIn} />}
-                {/* {signInOpen && <Navigate to={`/signin`} />} */}
-                {/* <MenuItem component={NavLink} to="/signin">Sign In</MenuItem>*/}
               </Menu>
             </div>
           )}
