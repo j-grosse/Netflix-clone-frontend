@@ -30,7 +30,7 @@ function Footer(props) {
     <footer>
       <Box
         component="footer"
-        sx={{ bgcolor: 'primary.main', py: 8 }}
+        sx={{ bgcolor: 'primary.main', py: 4 }}
         style={footerStyles}
       >
         <Container maxWidth="lg">

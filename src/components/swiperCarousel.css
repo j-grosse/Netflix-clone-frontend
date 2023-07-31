@@ -25,6 +25,7 @@ body {
   /* Update: Removed the Flex property - IE FIX */
 }
 
+
 .swiper-button-next,
 .swiper-button-prev {
   transition: transform 0.3s ease-in-out;
@@ -80,4 +81,3 @@ h1 {
 .netflix-slider .swiper-slide:last-child:hover {
   margin: 0 -40px;
 }
-/*# sourceMappingURL=styles.css.map */

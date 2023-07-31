@@ -1,6 +1,5 @@
 import React from 'react';
 import MovieCard from './MovieCard';
-
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -11,7 +10,7 @@ import { Typography } from '@mui/material';
 
 const SwiperCarousel = ({ movies, setSelectedCard }) => {
   const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 6,
+    slidesPerView: 4,
     spaceBetween: 10,
     slidesPerGroup: 2,
     pagination: {
