@@ -16,7 +16,7 @@ const SwiperCarousel = ({ tmdbMovies, setSelectedCardTmdb }) => {
   const swiper = new Swiper('.swiper-container', {
     slidesPerView: 6,
     spaceBetween: 10,
-    slidesPerGroup: 4,
+    slidesPerGroup: 6,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -54,18 +54,16 @@ const SwiperCarousel = ({ tmdbMovies, setSelectedCardTmdb }) => {
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
       </Swiper> */}
 
       <div className="netflix-slider">
-        <Typography variant="h3" sx={{ color: 'red', mt: '1rem', ml: '1rem'}}>
-          Hits of the Week 
-          <img src="/tmdb-logo.svg" width="200px" style={{'padding-left': '10px', 'padding-top': '1rem'}}/>
+        <Typography variant="h3" sx={{ color: 'red', mt: '1rem', ml: '1rem' }}>
+          Hits of the Week
+          <img
+            src="/tmdb-logo.svg"
+            width="200px"
+            style={{ 'padding-left': '10px', 'padding-top': '1rem' }}
+          />
         </Typography>
         <div className="swiper-container swiper">
           <div className="swiper-wrapper" key="1">

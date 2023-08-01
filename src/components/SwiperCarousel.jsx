@@ -30,7 +30,7 @@ const SwiperCarousel = ({ movies, setSelectedCard }) => {
           Continue Watching
           <img
             src="/postgres.png"
-            width="50px"
+            width="40px"
             style={{ 'padding-left': '0px' }}
           />
           <p style={{ color: 'white', 'font-size': '1.3rem' }}>ElephantSQL</p>
