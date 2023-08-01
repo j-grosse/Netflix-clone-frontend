@@ -1,0 +1,86 @@
+API
+Overview
+Create
+Approve Terms of Use
+Thank you for using the TMDB application programming interfaces (the "TMDB APIs"). By using the TMDB APIs, you UNCONDITIONALLY CONSENT AND AGREE TO BE BOUND BY AND A PARTY TO THESE TERMS AND CONDITIONS. If you disagree with any of these terms, TMDB does not grant you a license to use the TMDB APIs. TMDB reserves the right, in its sole discretion to modify this Agreement at any time by posting a notice to themoviedb.org. You shall be responsible for reviewing and becoming familiar with any such modification. Such modifications are effective upon first posting or notification and use of the TMDB API by Licensee following any such notification constitutes Licensee's acceptance of the terms and conditions of this Agreement as modified. You can always find the most recent version of these terms here.
+
+Your license to the TMDB APIs under these terms continues until either party terminates it. You may terminate the license by discontinuing use of all or any of the TMDB APIs. TMDB may terminate the license at any time for any reason. Your rights to use the TMDB APIs terminate automatically if (i) you violate any of these terms, (ii) TMDB publicly posts a written notice of termination on themoviedb.org, (iii) TMDB sends a written notice of termination to you (via electronic or other means), or (iv) TMDB disables access to the TMDB APIs to you. If TMDB terminates your license, or you terminate your license, you must immediately cease all use of TMDB content.
+
+1. Licensed Uses and Restrictions
+The TMDB APIs are owned by TMDB, Inc. (hereinafter "TMDb") and are licensed to you on a worldwide (except as limited below), non-exclusive, non-transferable, non-sublicenseable basis on the terms and conditions set forth herein. These terms define legal use of the TMDB APIs, all updates, revisions, substitutions that may be made available by TMDB, and any copies of the TMDB APIs made by or for you. TMDB reserves all rights not expressly granted to you.
+
+A. YOU SHALL
+Comply with the current TMDB Terms of Use at http://www.themoviedb.org/terms-of-use
+You shall give TMDB attribution for any and all content used from the site pursuant to paragraph 3.
+B. YOU SHALL NOT
+Attempt to cloak or conceal your identity or your application's identity when requesting authorization to use TMDB APIs.
+Use (or create applications that use) an unreasonable amount of bandwidth.
+Cache any TMDB metadata or photos other than for reasonable periods in order to provide your service.
+Use TMDB APIs for any application that constitutes, promotes or is used in connection with materials that constitute, promote or are used primarily for the purpose of dealing in: spyware, adware, or other malicious programs or code, counterfeit goods, items subject to U.S. embargo, unsolicited mass distribution of email ("spam"), multi-level marketing proposals, hate materials, hacking/surveillance/interception/descrambling equipment, libelous, defamatory, obscene, pornographic, abusive or otherwise offensive content.
+Use TMDB APIs in any manner or for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy, or rights of personality.
+Use TMDB as a generic image hosting service for banner advertisements, graphics, etc.
+Use TMDB APIs in a manner that adversely impacts the stability of themoviedb.org servers or adversely impacts the behavior of other applications using the TMDB APIs.
+Sell, lease, or sublicense TMDB APIs or access thereto or derive revenues from the use or provision of TMDB APIs, whether for direct commercial or monetary gain or otherwise, except as set forth below.
+Use TMDB APIs in a manner that is confusing or misleading as to the source or origin of your application or site.
+2. Commercial Use
+A. RULES AND RESTRICTIONS
+If the primary purpose of your application is to derive revenue, it is considered a commercial application. TMDB reserves the right to make these evaluations at the time that you apply for the license. TMDB may also monitor your site or application over time to ensure continued compliance with the appropriate type of API key.
+
+If you're in doubt about whether your application is commercial, here are a few common examples of commercial use that may provide you some guidance:
+
+Users are charged a fee for your product or a 3rd party's product or service or a 3rd party's service that includes some sort of integration using the TMDB APIs.
+You sell services using TMDb's APIs to bring users' TMDB content into your service.
+Your site is a "destination" site that uses TMDB content to drive traffic and generate revenue.
+Your site generates revenue by charging users for access to content related to TMDB content such as movies, television shows and music.
+B. APPLICATION FOR A COMMERCIAL API KEY
+If you want to apply for a commercial API key, go to the following form to see what information you need to provide. Lack of specificity or supporting information could delay your application indefinitely, please be very clear in defining your usage. It is always better to include more detail about your application. Please note that in some cases we may grant your request for a commercial API key subject to your payment of fees, such as to help cover infrastructure costs.
+
+3. Attribution
+You shall use the TMDB logo to identify your use of the TMDB APIs.
+
+You shall place the following notice prominently on your application: "This product uses the TMDB API but is not endorsed or certified by TMDB."
+
+Any use of the TMDB logo in your application shall be less prominent than the logo or mark that primarily describes the application and your use of the TMDB logo shall not imply any endorsement by TMDB.
+
+4. Ownership and Relationship of Parties
+The TMDB APIs may be protected by copyrights, trademarks, service marks, international treaties, and/or other proprietary rights and laws of the U.S. and other countries. TMDb's rights apply to the TMDB APIs and all output and executables of the TMDB APIs, excluding any software components developed by you, which do not themselves, incorporate the TMDB APIs or any output or executables of the TMDB APIs. You agree to abide by all applicable proprietary rights laws and other laws, as well as any additional copyright notices or restrictions contained in these terms. TMDB owns all rights, title, and interest in and to the TMDB APIs. Except as expressly set forth in Section 1, these terms grant you no right, title, or interest in any intellectual property owned or licensed by TMDB, including (but not limited to) the TMDB APIs and TMDB trademarks.
+
+5. Support
+TMDb may elect to provide you with support or modifications for the TMDB APIs (collectively, "Support"), in its sole discretion, and may terminate such Support at any time without notice to you. TMDB may change, suspend, or discontinue any aspect of the TMDB APIs at any time, including the availability of any TMDB APIs. TMDB may also impose limits on certain features and services or restrict your access to parts or all of the TMDB APIs or the TMDB Web site without notice or liability. TMDB may require at any time that you use only the most recent update or version of the TMDB APIs released by TMDB.
+
+6. Fees and Payments
+TMDb is committed to free and open access to our APIs for commercial and non-commercial purposes. However, providing the APIs does have real costs for TMDB. For uses of TMDB APIs over a certain rate or for certain types of commercial applications, TMDB reserves the right to charge fees for future use of or access to the TMDB APIs.
+
+7. Copyright
+TMDb respects the rights of copyright holders and publishers and requires all users to confirm they own the copyright or have permission from the copyright holder to upload content. We comply with the Digital Millennium Copyright Act (DMCA) and expeditiously remove content when properly notified, unless it reasonably appears to us that the content does not infringe upon copyright. Please note, however, that under Section 512(f) any person who knowingly materially misrepresents that material or activity is a copyright infringement may be subject to liability for damages. You should educate yourself as to whether content does, in fact infringe upon your copyright, or whether, for instance "fair use" under 17 U.S.C. §107 applies. If you are unsure whether the content you are reporting is infringing your legal rights, you may wish to seek legal guidance. Keep in mind that submitting intentionally misleading reports of infringement may be punishable under the Digital Millennium Copyright Act (DMCA) in the United States or similar laws in other countries.
+
+For claims of copyright infringement, please contact our designated agent under the Digital Millennium Copyright Act:
+
+Copyright Agent at: 489 S. El Camino Real, San Mateo, CA, 94402.
+
+8. Disclaimer of Any Warranty
+SOME OF THE TMDB APIS MAY BE EXPERIMENTAL AND NOT TESTED IN ANY MANNER. TMDB DOES NOT REPRESENT OR WARRANT THAT ANY TMDB APIS ARE FREE OF INACCURACIES, ERRORS, BUGS, OR INTERRUPTIONS, OR ARE RELIABLE, ACCURATE, COMPLETE, OR OTHERWISE VALID.
+
+THE TMDB APIS ARE PROVIDED "AS IS" WITH NO WARRANTY, EXPRESS OR IMPLIED, OF ANY KIND AND TMDB EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES AND CONDITIONS, INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AVAILABLILTIY, SECURITY, TITLE AND/OR NON-INFRINGEMENT. SOME STATES DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU. YOU MAY HAVE ADDITIONAL RIGHTS THAT VARY FROM STATE TO STATE.
+
+YOUR USE OF TMDB APIS IS AT YOUR OWN DISCRETION AND RISK, AND YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE THAT RESULTS FROM THE USE OF ANY TMDB APIS INCLUDING, BUT NOT LIMITED TO, ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA.
+
+9. Limitation of Liability
+REGARDLESS OF WHETHER ANY REMEDY SET FORTH HEREIN FAILS OF ITS ESSENTIAL PURPOSE OR OTHERWISE, AND EXCEPT FOR BODILY INJURY, IN NO EVENT WILL TMDB OR ITS LICENSORS OR SUPPLIERS BE LIABLE TO YOU OR TO ANY THIRD PARTY UNDER ANY TORT, CONTRACT, NEGLIGENCE, COPYRIGHT INFRINGEMENT LIABILTY, STRICT LIABILITY OR OTHER LEGAL OR EQUITABLE THEORY FOR ANY LOST PROFITS, LOST OR CORRUPTED DATA, COMPUTER FAILURE OR MALFUNCTION, INTERRUPTION OF BUSINESS, OR OTHER SPECIAL, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES OF ANY KIND ARISING OUT OF THE USE OR INABILITY TO USE THE API, EVEN IF TMDB HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSS OR DAMAGES AND WHETHER OR NOT SUCH LOSS OR DAMAGES ARE FORESEEABLE. SOME STATES DO NOT ALLOW LIMITATIONS ON LIABILITY, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.
+
+10. Release and Waiver
+To the maximum extent permitted by applicable law, you hereby release and waive all claims against TMDB, and its subsidiaries, affiliates, officers, agents, licensors, co-branders or other partners, and employees from any and all liability for claims, damages (actual and/or consequential), costs and expenses (including litigation costs and attorneys' fees) of every kind and nature, arising from or in any way related to your use of TMDB APIs. If you are a California resident, you waive your rights under California Civil Code § 1542, which states, "A general release does not extend to claims which the creditor does not know or suspect to exist in his favor at the time of executing the release, which if known by him must have materially affected his settlement with the debtor." You understand that any fact relating to any matter covered by this release may be found to be other than now believed to be true and you accept and assume the risk of such possible differences in fact. In addition, you expressly waive and relinquish any and all rights and benefits that you may have under any other state or federal statute or common law principle of similar effect, to the fullest extent permitted by law.
+
+11. Hold Harmless and Indemnity
+To the maximum extent permitted by applicable law, you agree to hold harmless and indemnify TMDB and its subsidiaries, affiliates, officers, agents, licensors, co-branders or other partners, and employees from and against any third party claim arising from or in any way related to your use of TMDB APIs, including any liability or expense arising from all claims, losses, damages (actual and/or consequential), suits, judgments, litigation costs and attorneys' fees, of every kind and nature. TMDB shall use good faith efforts to provide you with written notice of such claim, suit or action.
+
+12. General Terms
+Relationship of the Parties. Notwithstanding any provision hereof, for all purposes of the Terms of Use, you and TMDb shall be and act independently and not as partner, joint venturer, agent, employee or employer of the other. You shall not have any authority to assume or create any obligation for or on behalf of TMDB, express or implied, and you shall not attempt to bind TMDB to any contract.
+Invalidity of Specific Terms. If any provision of the Terms of Use is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the other provisions of this agreement will remain in full force and effect and the court should endeavor to give effect to the parties' intentions as reflected in the invalid provision.
+Location of Lawsuit and Choice of Law. THE TERMS OF USE AND THE RELATIONSHIP BETWEEN YOU AND TMDB SHALL BE GOVERNED BY THE LAWS OF THE STATE OF CALIFORNIA WITHOUT REGARD TO ITS CONFLICT OF LAW PROVISIONS. YOU AND TMDB AGREE TO SUBMIT TO THE PERSONAL JURISDICTION OF THE COURTS LOCATED WITHIN THE COUNTY OF SAN MATEO, CALIFORNIA.
+No Waiver of Rights by TMDB. TMDb's failure to exercise or enforce any right or provision of the Terms of Use shall not constitute a waiver of such right or provision.
+No Transfer. The rights and obligations of these Terms of Use is personal to you and may not be transferred by you, either voluntarily or by operation of law.
+Notice. Any notice to be sent to you under these Terms of Use may be sent via email, post, or any other reasonable means, at the contact information provided by you to TMDB from time to time. It is your obligation to insure that this information is current.
+Miscellaneous. The section headings and subheadings contained in this agreement are included for convenience only, and shall not limit or otherwise affect the terms of the Terms of Use. Any construction or interpretation to be made of the Terms of Use shall not be construed against the drafter. The Terms of Use constitute the entire agreement between TMDB and you with respect to the subject matter hereof.
+
+This Agreement was last updated on: July 28, 2014.

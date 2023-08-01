@@ -1,12 +1,12 @@
 import React from 'react';
 import MovieCard from './MovieCard';
+import { Typography } from '@mui/material';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './swiperCarousel.css';
-import { Typography } from '@mui/material';
 
 const SwiperCarousel = ({ movies, setSelectedCard }) => {
   const swiper = new Swiper('.swiper-container', {
@@ -26,9 +26,16 @@ const SwiperCarousel = ({ movies, setSelectedCard }) => {
   return (
     <>
       <div className="netflix-slider">
-        <Typography variant="h3" sx={{ color: 'red', mt: '5rem' }}>
-          Popular Movies
+        <Typography variant="h3" sx={{ color: 'red', mt: '5rem', ml: '1rem' }}>
+          Continue Watching
+          <img
+            src="{process.env.PUBLIC_URL + '/postgres.png'}"
+            width="50px"
+            style={{ 'padding-left': '0px' }}
+          />
+          <p style={{ color: 'white', 'font-size': '1.3rem' }}>ElephantSQL</p>
         </Typography>
+
         <div className="swiper-container swiper">
           <div className="swiper-wrapper" key="1">
             {movies &&
@@ -59,7 +66,7 @@ const SwiperCarousel = ({ movies, setSelectedCard }) => {
           </div>
         </div>
 
-        <div className="netflix-slider">
+        {/* <div className="netflix-slider">
           <Typography variant="h3" sx={{ color: 'red', mt: '5rem' }}>
             Continue Watching
           </Typography>
@@ -80,14 +87,14 @@ const SwiperCarousel = ({ movies, setSelectedCard }) => {
                       setSelectedCard={setSelectedCard}
                     />
                   </div>
-                ))}
-              {/* <!-- Add Pagination --> */}
-              {/* <!-- <div className="swiper-pagination"></div> --> */}
-              <div className="swiper-button-next"></div>
+                ))} */}
+        {/* <!-- Add Pagination --> */}
+        {/* <!-- <div className="swiper-pagination"></div> --> */}
+        {/* <div className="swiper-button-next"></div>
               <div className="swiper-button-prev"></div>
             </div>
-          </div>
-        </div>
+          </div> 
+        </div> */}
       </div>
     </>
   );

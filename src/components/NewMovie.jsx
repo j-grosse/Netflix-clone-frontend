@@ -11,6 +11,7 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import defaultPoster from '../assets/defaultPoster.jpg';
 import { useTheme } from '@mui/material/styles'; // Theme hook
+import Swal from 'sweetalert2';
 
 const NewMovie = () => {
   const theme = useTheme();
@@ -37,7 +38,13 @@ const NewMovie = () => {
         genre,
       })
       .then((res) => {
-        console.log(res.data);
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Movie was created',
+          showConfirmButton: false,
+          timer: 1500,
+        });
         navigate('/');
       })
       .catch((e) => console.log(e));
@@ -109,37 +116,49 @@ const NewMovie = () => {
                   margin: '0 auto',
                 }}
               >
-                <label style={{ color: 'white' }} htmlFor="title">Title</label>
+                <label style={{ color: 'white' }} htmlFor="title">
+                  Title
+                </label>
                 <input
                   type="text"
                   name="title"
                   onChange={(e) => setTitle(e.target.value)}
                 />
-                <label style={{ color: 'white' }} htmlFor="director">Director</label>
+                <label style={{ color: 'white' }} htmlFor="director">
+                  Director
+                </label>
                 <input
                   type="text"
                   name="director"
                   onChange={(e) => setDirector(e.target.value)}
                 />
-                <label style={{ color: 'white' }} htmlFor="year">Year</label>
+                <label style={{ color: 'white' }} htmlFor="year">
+                  Year
+                </label>
                 <input
                   type="text"
                   name="year"
                   onChange={(e) => setYear(e.target.value)}
                 />
-                <label style={{ color: 'white' }} htmlFor="rating">Rating</label>
+                <label style={{ color: 'white' }} htmlFor="rating">
+                  Rating
+                </label>
                 <input
                   type="text"
                   name="rating"
                   onChange={(e) => setRating(e.target.value)}
                 />
-                <label style={{ color: 'white' }} htmlFor="poster">Poster</label>
+                <label style={{ color: 'white' }} htmlFor="poster">
+                  Poster
+                </label>
                 <input
                   type="text"
                   name="poster"
                   onChange={(e) => setPoster(e.target.value)}
                 />
-                <label style={{ color: 'white' }} htmlFor="genre">Genre</label>
+                <label style={{ color: 'white' }} htmlFor="genre">
+                  Genre
+                </label>
                 <input
                   type="text"
                   name="genre"

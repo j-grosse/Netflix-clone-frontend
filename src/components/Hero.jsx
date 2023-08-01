@@ -20,7 +20,7 @@ const Hero = ({ children }) => {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             pt: 0,
-            pb: 50,
+            pb: 30,
             textAlign: 'center',
           }}
         >

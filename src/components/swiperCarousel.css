@@ -25,7 +25,6 @@ body {
   /* Update: Removed the Flex property - IE FIX */
 }
 
-
 .swiper-button-next,
 .swiper-button-prev {
   transition: transform 0.3s ease-in-out;

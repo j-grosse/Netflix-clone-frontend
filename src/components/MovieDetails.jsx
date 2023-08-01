@@ -13,6 +13,7 @@ import { useTheme } from '@mui/material/styles'; // Theme hook
 import { Box, ButtonGroup } from '@mui/material';
 import UpdateMovie from './UpdateMovie';
 import Container from '@mui/material/Container';
+import Swal from 'sweetalert2';
 
 const MovieDetails = () => {
   const theme = useTheme();
@@ -21,6 +22,7 @@ const MovieDetails = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [movie, setMovie] = useState(null); // movies array from backend
+  const [comments, setComments] = useState(null);
   const [showUpdate, setShowUpdate] = useState(null);
 
   useEffect(() => {
@@ -28,13 +30,41 @@ const MovieDetails = () => {
       .get(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies/${id}`)
       .then((res) => setMovie(res.data))
       .catch((e) => console.log(e.response?.data?.message));
-    console.log('API data was fetched');
+    console.log('axios: movies fetched');
+
+    axios
+      .get(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies/${id}/comments`)
+      .then((res) => setComments(res.data))
+      .catch((e) => console.log(e.response?.data?.message));
+    console.log('axios: comments fetched');
   }, []);
 
   const handleDelete = () => {
     axios
       .delete(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies/${id}`)
-      .then((res) => navigate('/'))
+      .then((res) => {
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Movie was deleted',
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            setComments(null);
+            navigate('/');
+          }
+        });
+      })
       .catch((e) => setError(e.response?.data?.message));
   };
 
@@ -96,12 +126,24 @@ const MovieDetails = () => {
                   <p>Year: {movie.year}</p>
                   <p>Rating: {movie.rating}</p>
                   <p>Genre: {movie.genre}</p>
+
+                  {comments ? (
+                    <>
+                      <br />
+                      {comments ? <p>Comments:</p> : <p>No Comments:</p>}
+                      <cite>{comments.comment}</cite>
+                      <p>
+                        {comments.author} (
+                        {new Date(comments.datetime).toLocaleDateString()})
+                      </p>
+                      <br />
+                      {console.log(comments)}
+                    </>
+                  ) : null}
                 </CardContent>
 
                 <CardActions>
-                  <ButtonGroup
-                    aria-label="outlined primary button group"
-                  >
+                  <ButtonGroup aria-label="outlined primary button group">
                     <Button
                       variant="outlined"
                       sx={{

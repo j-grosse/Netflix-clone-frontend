@@ -5,6 +5,7 @@ import { Container } from 'postcss';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateMovie = () => {
   const navigate = useNavigate();
@@ -39,7 +40,16 @@ const UpdateMovie = () => {
     ) {
       axios
         .put(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies/${id}`, movie)
-        .then((res) => navigate('/'))
+        .then((res) => {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Movie was updated',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          navigate('/');
+        })
         .catch((e) => setError(e));
     }
   };
@@ -68,42 +78,54 @@ const UpdateMovie = () => {
             color: 'black',
           }}
         >
-          <label style={{ color: 'white' }} htmlFor="title">Title</label>
+          <label style={{ color: 'white' }} htmlFor="title">
+            Title
+          </label>
           <input
             type="text"
             name="title"
             value={movie?.title || ''}
             onChange={handleChange}
           />
-          <label style={{ color: 'white' }} htmlFor="director">Director</label>
+          <label style={{ color: 'white' }} htmlFor="director">
+            Director
+          </label>
           <input
             type="text"
             name="director"
             value={movie?.director || ''}
             onChange={handleChange}
           />
-          <label style={{ color: 'white' }} htmlFor="year">Year</label>
+          <label style={{ color: 'white' }} htmlFor="year">
+            Year
+          </label>
           <input
             type="text"
             name="year"
             value={movie?.year || ''}
             onChange={handleChange}
           />
-          <label style={{ color: 'white' }} htmlFor="rating">Rating</label>
+          <label style={{ color: 'white' }} htmlFor="rating">
+            Rating
+          </label>
           <input
             type="text"
             name="rating"
             value={movie?.rating || ''}
             onChange={handleChange}
           />
-          <label style={{ color: 'white' }} htmlFor="poster">Poster</label>
+          <label style={{ color: 'white' }} htmlFor="poster">
+            Poster
+          </label>
           <input
             type="text"
             name="poster"
             value={movie?.poster || ''}
             onChange={handleChange}
           />
-          <label style={{ color: 'white' }} htmlFor="genre">Genre</label>
+          <label style={{ color: 'white' }} htmlFor="genre">
+            Genre
+          </label>
           <input
             type="text"
             name="genre"
