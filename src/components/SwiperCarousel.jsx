@@ -29,7 +29,7 @@ const SwiperCarousel = ({ movies, setSelectedCard }) => {
         <Typography variant="h3" sx={{ color: 'red', mt: '5rem', ml: '1rem' }}>
           Continue Watching
           <img
-            src="../assets/postgres.png"
+            src="/postgres.png"
             width="50px"
             style={{ 'padding-left': '0px' }}
           />
