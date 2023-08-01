@@ -65,7 +65,7 @@ const SwiperCarousel = ({ tmdbMovies, setSelectedCardTmdb }) => {
       <div className="netflix-slider">
         <Typography variant="h3" sx={{ color: 'red', mt: '1rem', ml: '1rem'}}>
           Hits of the Week 
-          <img src="/public/tmdb-logo.svg" width="200px" style={{'padding-left': '10px', 'padding-top': '1rem'}}/>
+          <img src="/tmdb-logo.svg" width="200px" style={{'padding-left': '10px', 'padding-top': '1rem'}}/>
         </Typography>
         <div className="swiper-container swiper">
           <div className="swiper-wrapper" key="1">
