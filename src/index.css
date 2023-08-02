@@ -23,3 +23,7 @@ html {
 li a {
   text-decoration: none;
 }
+
+.favicon {
+  filter: invert(100%);
+}

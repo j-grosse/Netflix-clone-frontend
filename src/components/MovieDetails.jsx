@@ -33,7 +33,7 @@ const MovieDetails = () => {
     console.log('axios: movies fetched');
 
     axios
-      .get(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies/${id}/comments`)
+      .get(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies/comments/${id}`)
       .then((res) => setComments(res.data))
       .catch((e) => console.log(e.response?.data?.message));
     console.log('axios: comments fetched');

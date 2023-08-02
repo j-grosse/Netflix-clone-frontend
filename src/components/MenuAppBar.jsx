@@ -52,7 +52,7 @@ export default function MenuAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <img src={favicon} width="40" />
+          <img src={favicon} alt="favicon" className="favicon" width="40"/>
           {/* <IconButton
             size="large"
             aria-label="menu"

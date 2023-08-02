@@ -1,8 +1,8 @@
 import React from 'react';
 import MovieCardTmdb from './MovieCardTmdb';
 import { Typography } from '@mui/material';
-// import { Navigation, Pagination } from 'swiper/modules';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
+// import { Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -10,13 +10,13 @@ import 'swiper/css/pagination';
 import './swiperCarousel.css';
 import Swiper from 'swiper';
 // import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow } from 'swiper/modules';
 
 const SwiperCarousel = ({ tmdbMovies, setSelectedCardTmdb }) => {
-  const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 6,
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 4,
     spaceBetween: 10,
-    slidesPerGroup: 6,
+    slidesPerGroup: 2,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -24,6 +24,24 @@ const SwiperCarousel = ({ tmdbMovies, setSelectedCardTmdb }) => {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
+    },
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
     },
   });
 
@@ -62,10 +80,10 @@ const SwiperCarousel = ({ tmdbMovies, setSelectedCardTmdb }) => {
           <img
             src="/tmdb-logo.svg"
             width="200px"
-            style={{ 'padding-left': '10px', 'padding-top': '1rem' }}
+            style={{ paddingLeft: '10px', paddingTop: '1rem' }}
           />
         </Typography>
-        <div className="swiper-container swiper">
+        <div className="swiper">
           <div className="swiper-wrapper" key="1">
             {tmdbMovies &&
               tmdbMovies.results.map((entry, index) => (

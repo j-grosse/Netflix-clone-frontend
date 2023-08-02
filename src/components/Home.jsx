@@ -42,6 +42,20 @@ const Home = () => {
       <Hero>
         <SearchForm setMovies={setMovies} />
       </Hero>
+
+      {Array.isArray(movies) ? (
+        <SwiperCarousel movies={movies} setSelectedCard={setSelectedCard} />
+      ) : (
+        <Typography
+          variant="h2"
+          sx={{ color: 'red', mt: '5rem', textAlign: 'center' }}
+        >
+          no movies found
+        </Typography>
+      )}
+
+      {/* <RenderCards apiData={movies} setSelectedCard={setSelectedCard} /> */}
+
       {Array.isArray(tmdbMovies.results) ? (
         <SwiperCarouselTmdb
           tmdbMovies={tmdbMovies}
@@ -54,19 +68,6 @@ const Home = () => {
         >
           no TMDB movies found
           {/* {console.log(tmdbMovies.results)} */}
-        </Typography>
-      )}
-
-      {/* <RenderCards apiData={movies} setSelectedCard={setSelectedCard} /> */}
-
-      {Array.isArray(movies) ? (
-        <SwiperCarousel movies={movies} setSelectedCard={setSelectedCard} />
-      ) : (
-        <Typography
-          variant="h2"
-          sx={{ color: 'red', mt: '5rem', textAlign: 'center' }}
-        >
-          no movies found
         </Typography>
       )}
     </Box>

@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import './swiperCarousel.css';
 
 const SwiperCarousel = ({ movies, setSelectedCard }) => {
-  const swiper = new Swiper('.swiper-container', {
+  const swiper = new Swiper('.swiper', {
     slidesPerView: 4,
     spaceBetween: 10,
     slidesPerGroup: 2,
@@ -21,6 +21,24 @@ const SwiperCarousel = ({ movies, setSelectedCard }) => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
   });
 
   return (
@@ -31,16 +49,15 @@ const SwiperCarousel = ({ movies, setSelectedCard }) => {
           <img
             src="/postgres.png"
             width="40px"
-            style={{ 'padding-left': '0px' }}
+            style={{ paddingLeft: '0px' }}
           />
-          <p style={{ color: 'white', 'font-size': '1.3rem' }}>ElephantSQL</p>
+          <p style={{ color: 'white', fontSize: '1.3rem' }}>ElephantSQL</p>
         </Typography>
 
-        <div className="swiper-container swiper">
+        <div className="swiper">
           <div className="swiper-wrapper" key="1">
             {movies &&
               movies.map((entry, index) => (
-                // <Grid item key={entry.id} xs={12} sm={6} md={4} lg={3}>
                 <div className="swiper-slide" key={entry.id}>
                   <MovieCard
                     id={entry.id}

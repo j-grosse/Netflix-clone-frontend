@@ -55,10 +55,10 @@ export default function MovieCard({
         />
         <CardContent sx={{ color: 'white',
               bgcolor: '#111', flexGrow: 1 }}>
-          <Typography gutterBottom variant="h6" component="h2">
+          <Typography gutterBottom component="h5">
             {title}
           </Typography>
-          {/* <Typography gutterBottom variant="h6" component="h2">
+          {/* <Typography gutterBottom variant="h6" component="h5">
             by {director}
           </Typography> */}
         </CardContent>
