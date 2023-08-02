@@ -13,40 +13,44 @@ import UseFormControl from './SearchForm';
 const Hero = ({ children }) => {
   return (
     <div>
-        <Box
-          sx={{
-            bgcolor: 'background.black',
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${heroImage})`,
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            pt: 0,
-            pb: 30,
-            textAlign: 'center',
-          }}
+      <Box
+        sx={{
+          bgcolor: 'background.black',
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${heroImage})`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          pt: 0,
+          pb: 30,
+          textAlign: 'center',
+        }}
+      >
+        <Stack
+          sx={{ pt: 40 }}
+          direction="column"
+          spacing={6}
+          justifyContent="center"
         >
-
-          <Stack
-            sx={{ pt: 40 }}
-            direction="column"
-            spacing={6}
-            justifyContent="center"
+          <Typography
+            variant="h3"
+            component="h5"
+            sx={{ textAlign: 'center' }}
+            color="red"
           >
-                      <Typography variant="h3" sx={{ textAlign: 'center' }} color="red">
             WATCHFLIX
           </Typography>
-            {children}
-            {/* <UseFormControl /> */}
+          {children}
+          {/* <UseFormControl /> */}
 
-            {/* 
+          {/* 
                 <Button
                   variant="contained"
                   sx={{ borderRadius: '10px', bgcolor: 'primary.main', ':hover': {bgcolor: 'secondary.light'}, }}
                 >
                   Add Recipe
                 </Button> */}
-            {/* <Button variant="outlined">Secondary action</Button> */}
-          </Stack>
-        </Box>
+          {/* <Button variant="outlined">Secondary action</Button> */}
+        </Stack>
+      </Box>
     </div>
   );
 };
