@@ -86,6 +86,7 @@ const MovieDetails = () => {
               className="container m-5"
               style={{ display: 'flex', justifyContent: 'center' }}
             >
+
               <Card
                 sx={{
                   background: theme.palette.background.paper,
@@ -93,13 +94,17 @@ const MovieDetails = () => {
                   flexDirection: 'column',
                   borderRadius: '4px',
                   boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)',
-                  bgcolor: 'whitesmoke',
-                  ':hover': { bgcolor: 'white' },
+                  // bgcolor: 'whitesmoke',
+                  bgcolor: 'black',
+                  color: 'whitesmoke',
+                  // ':hover': { bgcolor: 'black' },
                   height: '100%',
                 }}
               >
+                <h2 className="text-6xl py-5 font-bold">{movie.title}</h2>
+
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography
+                  {/* <Typography
                     variant="h5"
                     noWrap
                     component="div"
@@ -110,7 +115,7 @@ const MovieDetails = () => {
                     }}
                   >
                     {movie.title}
-                  </Typography>
+                  </Typography> */}
 
                   <CardMedia
                     component="div"
@@ -118,28 +123,30 @@ const MovieDetails = () => {
                       // 16:9
                       //   pt: '56.25%',
                       pt: '140%',
+                      width: '30rem',
                     }}
                     image={movie.poster}
                   />
 
-                  <p>Director: {movie.director}</p>
-                  <p>Year: {movie.year}</p>
-                  <p>Rating: {movie.rating}</p>
-                  <p>Genre: {movie.genre}</p>
-
-                  {comments ? (
-                    <>
-                      <br />
-                      {comments ? <p>Comments:</p> : <p>No Comments:</p>}
-                      <cite>{comments.comment}</cite>
-                      <p>
-                        {comments.author} (
-                        {new Date(comments.datetime).toLocaleDateString()})
-                      </p>
-                      <br />
-                      {console.log(comments)}
-                    </>
-                  ) : null}
+                  <p className="text-l font-bold p-2">
+                    <p>Director: {movie.director}</p>
+                    <p>Year: {movie.year}</p>
+                    <p>Rating: {movie.rating}</p>
+                    <p>Genre: {movie.genre}</p>
+                    {comments ? (
+                      <>
+                        <br />
+                        {comments ? <p>Comments:</p> : <p>No Comments:</p>}
+                        <cite>{comments.comment}</cite>
+                        <p>
+                          {comments.author} (
+                          {new Date(comments.datetime).toLocaleDateString()})
+                        </p>
+                        <br />
+                        {console.log(comments)}
+                      </>
+                    ) : null}
+                  </p>
                 </CardContent>
 
                 <CardActions>
@@ -148,7 +155,7 @@ const MovieDetails = () => {
                       variant="outlined"
                       sx={{
                         color: 'primary.main',
-                        bgcolor: 'whitesmoke',
+                        bgcolor: 'black',
                         ':hover': { bgcolor: 'grey' },
                       }}
                       size="large"
@@ -161,7 +168,7 @@ const MovieDetails = () => {
                       variant="outlined"
                       sx={{
                         color: 'primary.main',
-                        bgcolor: 'whitesmoke',
+                        bgcolor: 'black',
                         ':hover': { bgcolor: 'grey' },
                       }}
                       size="large"
@@ -173,7 +180,7 @@ const MovieDetails = () => {
                       variant="outlined"
                       sx={{
                         color: 'primary.main',
-                        bgcolor: 'whitesmoke',
+                        bgcolor: 'black',
                         ':hover': { bgcolor: 'grey' },
                       }}
                       size="large"

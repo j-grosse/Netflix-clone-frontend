@@ -23,12 +23,12 @@ export default function MovieCard({
     <div key={id}>
       <Card
         sx={{
-          background: theme.palette.background.paper,
+          background: 'theme.palette.background.paper',
           display: 'flex',
           flexDirection: 'column',
           borderRadius: '4px',
           boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)',
-          bgcolor: 'whitesmoke',
+          bgcolor: 'black',
           ':hover': { cursor: 'pointer', transform: 'scale(1.1)', transition: 'background-color 0.5s ease-out', bgcolor: 'lightgrey' },
           height: '100%',
         }}
@@ -50,6 +50,7 @@ export default function MovieCard({
             // 16:9
             pt: '140%',
             // pt: '56.25%',
+            
           }}
           image={poster}
         />
