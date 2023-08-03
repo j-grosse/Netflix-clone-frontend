@@ -98,10 +98,11 @@ const MovieDetails = () => {
                   bgcolor: 'black',
                   color: 'whitesmoke',
                   // ':hover': { bgcolor: 'black' },
+                  width: '35rem',
                   height: '100%',
                 }}
               >
-                <h2 className="text-6xl py-5 font-bold">{movie.title}</h2>
+                <h2 className="text-4xl py-5 font-bold">{movie.title}</h2>
 
                 <CardContent sx={{ flexGrow: 1 }}>
                   {/* <Typography
@@ -123,12 +124,11 @@ const MovieDetails = () => {
                       // 16:9
                       //   pt: '56.25%',
                       pt: '140%',
-                      width: '30rem',
                     }}
                     image={movie.poster}
                   />
 
-                  <p className="text-l font-bold p-2">
+                  <p className="text-lg font-bold p-2">
                     <p>Director: {movie.director}</p>
                     <p>Year: {movie.year}</p>
                     <p>Rating: {movie.rating}</p>
